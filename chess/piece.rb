@@ -11,7 +11,4 @@ class Piece
   def inspect
     "Piece: color => #{color}, position => #{pos}"
   end
-
-  def moves
-  end
 end
