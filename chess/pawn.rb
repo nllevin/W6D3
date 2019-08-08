@@ -1,6 +1,4 @@
-require_relative 'piece'
-
-class Pawn
+class Pawn < Piece
   def symbol
     :pawn
   end
@@ -24,7 +22,7 @@ class Pawn
     one_step = [row + forward_dir, col]
     return [] unless board.valid_pos?(one_step) && board[one_step].empty?
     two_steps = [row + 2 * forward_dir, col]
-    return [one_step] unless board.valid_pos?(two_steps) && board[two_steps].empty?
+    return [one_step] unless at_start_row? && board.valid_pos?(two_steps) && board[two_steps].empty?
     [one_step, two_steps]
   end
 
