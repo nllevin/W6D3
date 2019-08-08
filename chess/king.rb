@@ -2,7 +2,7 @@ class King < Piece
   include Stepable
 
   def symbol
-    :King
+    :king
   end
 
   protected
