@@ -25,7 +25,7 @@ module Slideable
     unblocked_moves = []
     new_pos = [pos[0] + dx, pos[1] + dy]
 
-    while board.valid_pos?(new_pos) && board[new_pos] == nil
+    while board.valid_pos?(new_pos) && board[new_pos].empty?
       unblocked_moves << new_pos
       new_pos = [new_pos[0] + dx, new_pos[1] + dy] 
     end

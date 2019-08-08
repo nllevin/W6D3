@@ -8,6 +8,10 @@ class Piece
       color, board, pos
   end
 
+  def empty?
+    is_a?(NullPiece)
+  end
+
   def inspect
     "Piece: color => #{color}, position => #{pos}"
   end
