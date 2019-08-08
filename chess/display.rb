@@ -29,9 +29,29 @@ end
 if __FILE__ == $PROGRAM_NAME
   board = Board.new
   test = Display.new(board)
-  loop do
-    test.render
-    test.cursor.get_input
-  end
+  test.render
+
+  board.move_piece([6, 5], [5, 5])
+  test.render
+  puts board.checkmate?(:white)
+  sleep(2)
+
+  board.move_piece([1, 4], [3, 4])
+  test.render
+  puts board.checkmate?(:white)
+  sleep(2)
+
+  board.move_piece([6, 6], [4, 6])
+  test.render
+  puts board.checkmate?(:white)
+  sleep(2)
+
+  board.move_piece([0, 3], [4, 7])
+  test.render
+  puts board.checkmate?(:white)
+  # loop do
+  #   test.render
+  #   test.cursor.get_input
+  # end
 end
 # unselected and selected cursor colors?
