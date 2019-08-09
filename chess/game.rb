@@ -21,8 +21,8 @@ class Game
 
       begin
         start_pos, end_pos = players[current_player].make_move
-        raise "You cannot move opponent's piece" unless board[start_pos].color == current_player
         board.move_piece(start_pos, end_pos)
+        raise "You cannot move opponent's piece" unless board[start_pos].color == current_player
       rescue StandardError => e
         puts e.message
         puts "Try again"
